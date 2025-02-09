@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="center" hgap="10" stylesheets="@style.css" vgap="10" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.LoginController">
+    <padding><Insets bottom="10" left="25" right="25" top="25" /></padding>
+    <Button onAction="#closeProgram" style="-fx-background-color: transparent; -fx-text-fill: grey; -fx-font-size: 20px; -fx-padding: 0;" text="X" GridPane.columnIndex="4" />
+    <!-- Labels and Input Fields -->
+    <Label text="User Sign In" GridPane.rowIndex="1" />
+    <Label text="User Name:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+    <TextField fx:id="username" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+    <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+    <PasswordField fx:id="password" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+    <!-- Login Button -->
+    <Button onAction="#LoginPressed" text="Login" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+
+    <!-- Close Button (X) in the top-left corner -->
+
+    <Label onMouseClicked="#onSignUpClick" style="-fx-text-fill: blue; -fx-underline: true;" text="Don't have an account? Sign up!" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+    <Label fx:id="errorLabel" text="Username is already registered." style="-fx-text-fill: red;" GridPane.columnIndex="0" GridPane.rowIndex="5" GridPane.columnSpan="2" visible="false" />
+    <!-- Column Constraints -->
+    <columnConstraints>
+        <ColumnConstraints />
+        <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+    </columnConstraints>
+
+    <!-- Row Constraints -->
+    <rowConstraints>
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+      <RowConstraints />
+      <RowConstraints /> <!-- For the Login button -->
+    </rowConstraints>
+
+    <!-- Optional Effect -->
+    <effect>
+        <Blend />
+    </effect>
+</GridPane>

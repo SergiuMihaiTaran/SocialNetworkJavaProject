@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="center" hgap="10" vgap="10" stylesheets="@style.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17.0.12" fx:controller="com.example.demo.SignUpController">
+    <padding><Insets bottom="10" left="25" right="25" top="25" /></padding>
+
+    <!-- Close Button -->
+    <Button onAction="#closeProgram" style="-fx-background-color: transparent; -fx-text-fill: grey; -fx-font-size: 20px; -fx-padding: 0;" text="X" GridPane.columnIndex="4" />
+
+    <!-- Title Label -->
+    <Label text="Sign Up"  GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.columnSpan="2" />
+
+    <!-- Username Field -->
+    <Label text="User Name:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+    <TextField fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+    <!-- Password Field -->
+    <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+    <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+    <!-- Confirm Password Field -->
+    <Label text="Confirm Password:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+    <PasswordField fx:id="confirmPasswordField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+    <!-- Register Button -->
+    <Button onAction="#onSignUpClick" text="Register" GridPane.columnIndex="0" GridPane.rowIndex="5" GridPane.columnSpan="2" />
+    <Label fx:id="errorLabel" text="Username is already registered." style="-fx-text-fill: red;" GridPane.columnIndex="0" GridPane.rowIndex="6" GridPane.columnSpan="2" visible="false" />
+
+    <!-- Sign-In Label -->
+    <Label onMouseClicked="#onSignInClick" style="-fx-text-fill: blue; -fx-underline: true;" text="Have an account? Sign In!" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+</GridPane>

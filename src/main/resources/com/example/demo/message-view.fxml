@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.demo.MessageController">
+    <!-- Message Display Area -->
+    <top>
+        <HBox alignment="CENTER" style="-fx-padding: 10;">
+            <Label fx:id="friendNameLabel" text="Friend's Name" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button onAction="#closeProgram"
+                    style="-fx-background-color: transparent; -fx-text-fill: grey; -fx-font-size: 20px; -fx-padding: 0;"
+                    text="X" />
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fx:id="messageScrollPane" fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="ALWAYS">
+            <VBox fx:id="messagesContainer">
+                <VBox.margin>
+                    <Insets top="10" right="10" bottom="10" left="10" />
+                </VBox.margin>
+            </VBox>
+        </ScrollPane>
+    </center>
+
+    <!-- Input Area -->
+    <bottom>
+        <VBox spacing="5">
+            <!-- Reply Preview Section -->
+            <HBox fx:id="replyPreview" visible="false" style="-fx-background-color: #f0f0f0; -fx-padding: 5; -fx-border-color: lightgrey; -fx-border-radius: 5;">
+                <Label fx:id="replyToLabel" style="-fx-font-weight: bold;" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Button text="X" onAction="#clearReply" style="-fx-background-color: transparent; -fx-text-fill: grey; -fx-font-size: 14px; -fx-padding: 0;" />
+            </HBox>
+
+            <!-- Input Area -->
+            <HBox>
+                <TextField fx:id="messageInput" promptText="Type your message..." HBox.hgrow="ALWAYS" onKeyPressed="#handleEnterKey" />
+                <Button text="Send" onAction="#onSendButtonClicked" />
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>

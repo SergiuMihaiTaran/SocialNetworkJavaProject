@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.demo.AddFriendController">
+    <top>
+        <HBox alignment="TOP_RIGHT" style="-fx-padding: 5 15 0 0;"> <!-- Adjust padding for finer alignment -->
+            <Button onAction="#closeProgram"
+                    style="-fx-background-color: transparent; -fx-text-fill: grey; -fx-font-size: 20px; -fx-padding: 0;"
+                    text="X" />
+        </HBox>
+    </top>
+    <center>
+        <VBox alignment="center" spacing="10" stylesheets="@style.css">
+            <TextField fx:id="searchField" promptText="Search for a future friend" onKeyTyped="#onSearchFieldKeyTyped" />
+            <ListView fx:id="searchResultsListView" prefHeight="200" prefWidth="200" />
+            <Text fx:id="successMessage" style="-fx-fill: green;" visible="false" />
+        </VBox>
+    </center>
+</BorderPane>

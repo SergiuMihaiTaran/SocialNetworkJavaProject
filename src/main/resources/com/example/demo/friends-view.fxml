@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.FriendsController">
+    <!-- Top: Title and close button in the same row -->
+    <top>
+        <HBox alignment="CENTER" style="-fx-padding: 10;">
+            <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #808080; -fx-font-family: serif" text="Friends Management" />
+            <Region fx:id="spacer" HBox.hgrow="ALWAYS" />
+            <Button onAction="#closeProgram" style="-fx-background-color: transparent; -fx-text-fill: grey; -fx-font-size: 20px; -fx-padding: 0;" text="X" />
+        </HBox>
+    </top>
+
+    <!-- Center: Main layout -->
+    <center>
+        <HBox alignment="center" spacing="10" stylesheets="@style.css">
+            <!-- Left side: Buttons for various actions -->
+            <VBox alignment="top_left" spacing="10">
+                <Button onAction="#onAddFriendClick" text="Add Friend" />
+                <Button onAction="#onRemoveFriendClick" text="Remove Friend" />
+                <Button onAction="#onFriendRequests" text="Friend Requests" />
+                <Button fx:id="toggleButton" onAction="#toggleFriendList" text="Show Friends" />
+
+            </VBox>
+
+            <!-- Right side: Friend list container -->
+            <VBox fx:id="friendListContainer" style="-fx-background-color: #f0f0f0; -fx-padding: 10;" visible="false" spacing="10">
+                <!-- ListView -->
+                <ListView fx:id="friendListView" prefHeight="200.0" prefWidth="342.0" />
+
+                <!-- Buttons below the ListView -->
+                <HBox alignment="CENTER" spacing="10">
+                    <Button fx:id="prevPageButton" onAction="#onPrevPage" text="Previous Page" />
+                    <Button fx:id="nextPageButton" onAction="#onNextPage" text="Next Page" />
+                </HBox>
+            </VBox>
+        </HBox>
+    </center>
+</BorderPane>

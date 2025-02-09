@@ -1,0 +1,56 @@
+.root{
+    -fx-background-color: #ffffff;
+}
+.grid-pane {
+    -fx-background-color: #000000;
+    -fx-border-color: #000000;
+    -fx-border-width: 200;
+    -fx-background-insets: 0;  /* Ensure the background color applies without insets */
+    -fx-border-radius: 800;
+    -fx-background-radius: 800;
+}
+
+/* Style the Text (Title) */
+.text {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-fill: #808080;
+    -fx-font-family: "serif";  /* Change to any font you prefer, like "Verdana" or "Tahoma" */
+
+}
+
+/* Style Labels */
+.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #555555;
+}
+
+/* Style TextField and PasswordField */
+.text-field, .password-field {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #808080;
+    -fx-border-width: 1;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-padding: 5px;
+    -fx-font-size: 14px;
+    -fx-text-fill: #333333;
+    -fx-font-family: "serif";  /* Change to any font you prefer, like "Verdana" or "Tahoma" */
+    -fx-font-weight: bold;
+}
+
+/* Add hover effect for TextField and PasswordField */
+.text-field:hover, .password-field:hover {
+    -fx-border-color: #5a9bd5;
+}
+
+/* Add focus effect for TextField and PasswordField */
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #2b6dbf;
+    -fx-background-color: #eef4fc;
+}
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #2b6dbf;
+    -fx-background-color: #eef4fc;
+    -fx-effect: dropshadow(gaussian, #2b6dbf, 10, 0.5, 0, 0);
+}
